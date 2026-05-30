@@ -21,7 +21,7 @@
 <button style="background:#00ffff;color:black;border:none;padding:15px 25px;border-radius:12px;font-size:18px;font-weight:bold;" onclick="generate()">⚡ Generate Sensitivity</button>
 
 <h2 id="result" style="margin-top:30px;background:#111;padding:20px;border-radius:15px;box-shadow:0 0 20px #00ffff;width:80%;margin-left:auto;margin-right:auto;"></h2>
-
+<button onclick="copySensi()" style="margin-top:15px;background:#00ffff;color:black;border:none;padding:12px 20px;border-radius:10px;font-weight:bold;">📋 Copy Sensitivity</button>
 <script>
 function random(min,max){
 return Math.floor(Math.random()*(max-min+1))+min;
@@ -35,6 +35,11 @@ document.getElementById("result").innerHTML=
 "4x Scope: "+random(80,180)+"<br>"+
 "AWM: "+random(50,150)+"<br>"+
 "Free Look: "+random(120,200);
+}
+  function copySensi(){
+let text=document.getElementById("result").innerText;
+navigator.clipboard.writeText(text);
+alert("Sensitivity Copied!");
 }
 </script>
 
