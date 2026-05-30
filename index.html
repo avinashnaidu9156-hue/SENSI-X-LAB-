@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>SENSI X LAB</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body style="background:black;color:white;text-align:center;font-family:Arial;">
+<h1>SENSI X LAB</h1>
+<h3>Ultimate Free Fire Sensitivity Generator</h3>
+
+<select id="ram">
+<option>2GB RAM</option>
+<option>3GB RAM</option>
+<option>4GB RAM</option>
+<option>6GB RAM</option>
+<option>8GB+ RAM</option>
+</select>
+
+<br><br>
+
+<button onclick="generate()">Generate Sensitivity</button>
+
+<h2 id="result"></h2>
+
+<script>
+function random(min,max){
+return Math.floor(Math.random()*(max-min+1))+min;
+}
+
+function generate(){
+document.getElementById("result").innerHTML=
+"General: "+random(120,200)+"<br>"+
+"Red Dot: "+random(100,200)+"<br>"+
+"2x Scope: "+random(100,190)+"<br>"+
+"4x Scope: "+random(80,180)+"<br>"+
+"AWM: "+random(50,150)+"<br>"+
+"Free Look: "+random(120,200);
+}
+</script>
+
+</body>
+</html>
