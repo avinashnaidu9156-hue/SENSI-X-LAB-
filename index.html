@@ -17,18 +17,27 @@
 </select>
 
 <br><br>
+<select id="mode">
+<option>Balanced</option>
+<option>Headshot</option>
+<option>Drag</option>
+</select>
 
+<br><br>
 <button style="background:#00ffff;color:black;border:none;padding:15px 25px;border-radius:12px;font-size:18px;font-weight:bold;" onclick="generate()">⚡ Generate Sensitivity</button>
 
 <h2 id="result" style="margin-top:30px;background:#111;padding:20px;border-radius:15px;box-shadow:0 0 20px #00ffff;width:80%;margin-left:auto;margin-right:auto;"></h2>
-<button onclick="copySensi()" style="margin-top:15px;background:#00ffff;color:black;border:none;padding:12px 20px;border-radius:10px;font-weight:bold;">📋 Copy Sensitivity</button>
+
+  <button onclick="copySensi()" style="margin-top:15px;background:#00ffff;color:black;border:none;padding:12px 20px;border-radius:10px;font-weight:bold;">📋 Copy Sensitivity</button>
 <script>
 function random(min,max){
 return Math.floor(Math.random()*(max-min+1))+min;
 }
 
 function generate(){
-document.getElementById("result").innerHTML=
+  let mode=document.getElementById("mode").value;
+  document.getElementById("result").innerHTML=
+    "Mode: "+mode+"<br><br>"+
 "General: "+random(120,200)+"<br>"+
 "Red Dot: "+random(100,200)+"<br>"+
 "2x Scope: "+random(100,190)+"<br>"+
