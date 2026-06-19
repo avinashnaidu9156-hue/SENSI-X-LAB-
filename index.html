@@ -44,13 +44,29 @@ function generate(){
 "4x Scope: "+random(80,180)+"<br>"+
 "AWM: "+random(50,150)+"<br>"+
 "Free Look: "+random(120,200);
+showRank();
 }
-  function copySensi(){
-let text=document.getElementById("result").innerText;
-navigator.clipboard.writeText(text);
-alert("Sensitivity Copied!");
+
+
+function copySensi(){
+  let text=document.getElementById("result").innerText;
+  navigator.clipboard.writeText(text);
+  alert("Sensitivity Copied!");
 }
-</script>
+
+function getRating(){
+  return Math.floor(Math.random() * 11) + 90;
+}
+
+function showRank(){
+  let rating = getRating();
+
+  document.getElementById("result").innerHTML +=
+  "<br><br>⭐ Headshot Rating: " + rating + "/100" +
+  "<br>🏆 Best For: CS Ranked";
+}
+  </script>
+  
 
 </body>
 </html>
