@@ -99,26 +99,44 @@ function showRank(){
 document.getElementById("device").innerHTML =
 "📱 Device Detected";
 }
+function showRuok(){
+document.getElementById("result").innerHTML =
+"⚡ RUOK SENSI<br><br>General: 200<br>Red Dot: 180<br>2x Scope: 150<br>4x Scope: 120<br>AWM: 50<br>Free Look: 150";
+}
 
+function showRaistar(){
+document.getElementById("result").innerHTML =
+"🎯 RAISTAR SENSI<br><br>General: 100<br>Red Dot: 100<br>2x Scope: 90<br>4x Scope: 80<br>AWM: 50<br>Free Look: 100";
+}
+
+function showWhite444(){
+document.getElementById("result").innerHTML =
+"🔥 WHITE444 SENSI<br><br>General: 180<br>Red Dot: 160<br>2x Scope: 140<br>4x Scope: 120<br>AWM: 60<br>Free Look: 150";
+}
+
+function showAjjubhai(){
+document.getElementById("result").innerHTML =
+"👑 AJJUBHAI SENSI<br><br>General: 170<br>Red Dot: 150<br>2x Scope: 130<br>4x Scope: 100<br>AWM: 55<br>Free Look: 145";
+}
 window.onload = detectDevice;
 </script>
   
 
 <h2 style="color:#00ffff;margin-top:40px;">🏆 Top Players Sensi</h2>
 
-<div style="background:#111;padding:15px;margin:10px;border-radius:12px;">
+<div onclick="showRuok()" style="background:#111;padding:15px;margin:10px;border-radius:12px;cursor:pointer;">
 ⚡ <b>Ruok</b> - Drag Master
 </div>
 
-<div style="background:#111;padding:15px;margin:10px;border-radius:12px;">
+<div onclick="showRaistar()" style="background:#111;padding:15px;margin:10px;border-radius:12px;cursor:pointer;">
 🎯 <b>Raistar</b> - Headshot King
 </div>
 
-<div style="background:#111;padding:15px;margin:10px;border-radius:12px;">
+<div onclick="showWhite444()" style="background:#111;padding:15px;margin:10px;border-radius:12px;cursor:pointer;">
 🔥 <b>White444</b> - Balanced Pro
 </div>
 
-<div style="background:#111;padding:15px;margin:10px;border-radius:12px;">
+<div onclick="showAjjubhai()" style="background:#111;padding:15px;margin:10px;border-radius:12px;cursor:pointer;">
 👑 <b>Ajjubhai</b> - All Rounder
 </div>
 
