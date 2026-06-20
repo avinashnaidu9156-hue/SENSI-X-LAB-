@@ -2,9 +2,34 @@
 <html>
 <head>
 <title>SENSI X LAB</title>
+  <style>
+body{
+  background: linear-gradient(135deg,#000000,#071a24,#001f2f);
+  color:white;
+  font-family:Arial,sans-serif;
+  text-align:center;
+  padding:20px;
+}
+
+select,button{
+  padding:12px;
+  border-radius:12px;
+  border:none;
+  margin:10px;
+  font-size:16px;
+}
+
+#result{
+  background:#111;
+  border:1px solid #00ffff;
+  border-radius:20px;
+  box-shadow:0 0 20px #00ffff;
+  padding:20px;
+}
+  </style>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
-<body style="background:linear-gradient(135deg,#000000,#071a24,#000000);color:white;text-align:center;font-family:Arial;">
+<body>
 <p id="device" style="color:#00ffff;font-size:18px;"></p>
 <select id="ram">
 <option>2GB RAM</option>
@@ -22,9 +47,10 @@
 </select>
 
 <br><br>
-<button style="background:#00ffff;color:black;border:none;padding:15px 25px;border-radius:12px;font-size:18px;font-weight:bold;" onclick="generate()">⚡ Generate Sensitivity</button>
-
-<h2 id="result" style="margin-top:30px;background:#111;padding:20px;border-radius:15px;box-shadow:0 0 20px #00ffff;width:80%;margin-left:auto;margin-right:auto;"></h2>
+<button onclick="generate()" style="background:#00ffff;color:black;border:none;padding:18px 35px;border-radius:18px;font-size:22px;font-weight:bold;box-shadow:0 0 20px #00ffff;cursor:pointer;">
+⚡ Generate Sensitivity
+</button>
+<div id="result" style="margin-top:30px;background:#111;padding:20px;border-radius:15px;box-shadow:0 0 20px #00ffff;width:80%;margin-left:auto;margin-right:auto;"></h2>
 
   <button onclick="copySensi()" style="margin-top:15px;background:#00ffff;color:black;border:none;padding:12px 20px;border-radius:10px;font-weight:bold;">📋 Copy Sensitivity</button>
 <script>
