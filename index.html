@@ -5,9 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 <body style="background:linear-gradient(135deg,#000000,#071a24,#000000);color:white;text-align:center;font-family:Arial;">
-<h1 style="font-size:55px;color:#00ffff;text-shadow:0 0 20px #00ffff,0 0 40px #00ffff;">SENSI X LAB</h1>
-<h3 style="color:#b8faff;">Ultimate Free Fire Sensitivity Generator</h3>
-
+<p id="device" style="color:#00ffff;font-size:18px;"></p>
 <select id="ram">
 <option>2GB RAM</option>
 <option>3GB RAM</option>
@@ -95,8 +93,12 @@ function showRank(){
   "<br><br>⭐ Headshot Rating: " + rating + "/100" +
   "<br>🏆 Best For: CS Ranked";
 }
-  </script>
-  
+  function detectDevice(){
+document.getElementById("device").innerHTML =
+"📱 Device Detected";
+}
 
+window.onload = detectDevice;
+</script>
 </body>
 </html>
