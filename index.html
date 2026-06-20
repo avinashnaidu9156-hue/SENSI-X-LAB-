@@ -35,15 +35,45 @@ return Math.floor(Math.random()*(max-min+1))+min;
 }
 
 function generate(){
-  let mode=document.getElementById("mode").value;
-  document.getElementById("result").innerHTML=
-    "Mode: "+mode+"<br><br>"+
-"General: "+random(120,200)+"<br>"+
-"Red Dot: "+random(100,200)+"<br>"+
-"2x Scope: "+random(100,190)+"<br>"+
-"4x Scope: "+random(80,180)+"<br>"+
-"AWM: "+random(50,150)+"<br>"+
-"Free Look: "+random(120,200);
+
+let ram = document.getElementById("ram").value;
+let mode = document.getElementById("mode").value;
+
+let general, reddot, scope2x, scope4x, awm, freelook;
+
+if(ram=="2GB RAM"){
+  general=191; reddot=78; scope2x=69; scope4x=53; awm=32; freelook=88;
+}
+else if(ram=="3GB RAM"){
+  general=189; reddot=76; scope2x=67; scope4x=51; awm=34; freelook=91;
+}
+else if(ram=="4GB RAM"){
+  general=181; reddot=35; scope2x=92; scope4x=73; awm=45; freelook=119;
+}
+else if(ram=="6GB RAM"){
+  general=171; reddot=120; scope2x=105; scope4x=85; awm=55; freelook=130;
+}
+else{
+  general=161; reddot=80; scope2x=120; scope4x=95; awm=60; freelook=145;
+}
+
+if(mode=="Headshot"){
+  general += 10;
+  reddot += 15;
+}
+else if(mode=="Drag"){
+  general += 20;
+}
+
+document.getElementById("result").innerHTML =
+"Mode: "+mode+"<br><br>"+
+"General: "+general+"<br>"+
+"Red Dot: "+reddot+"<br>"+
+"2x Scope: "+scope2x+"<br>"+
+"4x Scope: "+scope4x+"<br>"+
+"AWM: "+awm+"<br>"+
+"Free Look: "+freelook;
+
 showRank();
 }
 
