@@ -54,7 +54,7 @@ AI Free Fire Sensitivity Generator
 </select>
 
 <br><br>
-<button onclick="generate()" style="background:#00ffff;color:black;border:none;padding:18px 35px;border-radius:18px;font-size:22px;font-weight:bold;box-shadow:0 0 20px #00ffff;cursor:pointer;">
+<button onclick="generate();this.style.transform='scale(0.95)';setTimeout(()=>this.style.transform='scale(1)',150)"
 ⚡ Generate Sensitivity
 </button>
 <div id="result" style="margin-top:30px;background:#111;padding:20px;"></div>
@@ -113,7 +113,12 @@ showRank();
 function copySensi(){
   let text=document.getElementById("result").innerText;
   navigator.clipboard.writeText(text);
-  alert("Sensitivity Copied!");
+  let toast = document.getElementById("toast");
+toast.style.display = "block";
+
+setTimeout(() => {
+  toast.style.display = "none";
+}, 2000);
 }
 
 function getRating(){
@@ -173,7 +178,22 @@ window.onload = detectDevice;
 <div onclick="showAjjubhai()" style="background:#111;padding:15px;margin:10px;border-radius:12px;cursor:pointer;">
 👑 <b>Ajjubhai</b> - All Rounder
 </div>
-
+<div id="toast" style="
+display:none;
+position:fixed;
+bottom:20px;
+left:50%;
+transform:translateX(-50%);
+background:#00ffff;
+color:black;
+padding:12px 20px;
+border-radius:10px;
+font-weight:bold;
+box-shadow:0 0 15px #00ffff;
+z-index:9999;
+">
+✅ Sensitivity Copied!
+</div>
 </body>
 </html>
 
